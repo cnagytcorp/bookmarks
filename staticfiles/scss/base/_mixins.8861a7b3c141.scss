@@ -1,0 +1,133 @@
+// --------------------------------------------------------------------- mixins
+
+@mixin default-bg-color {
+    background-color: $white-dimmed;
+}
+
+@mixin black-border {
+    border: 1px solid $black;
+}
+
+@mixin container-text-icon {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin container-text-icon-title {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin container-title-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin flex-none {
+    flex: 0 0 auto;
+}
+
+@mixin section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+@mixin icon-tile-bg {
+    background-image: url("/static/img/bg/icon_tile.png");
+    background-repeat: repeat;
+}
+
+@mixin background-overlay($opacity) {
+    // opacity : level of opacity for rgba value
+    background-color: rgba(255, 255, 255, $opacity);
+}
+
+@mixin faded-link {
+    color: $medium-grey;
+    transition: 0.3s ease-out;
+
+    &:hover {
+        color: $gunmetal;
+    }
+}
+
+
+// - button setup
+
+@mixin square-button($col1, $col2, $col3, $col4) {
+    /*
+    * col1 : background color
+    * col2 : font color
+    * col3 : hover background color
+    * col4 : hover font color
+    */
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    background-color: $col1;
+    border-radius: 0.25rem;
+    color: $col2;
+    display: inline-block;
+    transition: 0.2s ease-out;
+
+    font-family: $text-button;
+    font-size: .8rem;
+
+    span {
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        padding: 0.25rem 0.4rem;
+        text-align: right;
+        line-height: 1rem;
+    }
+
+    &:hover {
+        background-color: $col3;
+        color: $col4;
+    }
+
+    &:focus {
+        outline:none
+    }
+}
+
+@mixin default-button($col1, $col2, $col3, $col4, $col5, $col6:null) {
+    /*
+    * col1 : background color
+    * col2 : font color
+    * col3 : border color
+    * col4 : hover background color
+    * col5 : hover font color
+    * col6 : hover border color (optional)
+    */
+    background-color: $col1;
+    color: $col2;
+    border: 1px solid $col3;
+    border-radius: 0.25rem;
+    margin: .25rem 0;
+    padding: 0.25rem 0.5rem;
+
+    display: inline-block;
+    transition: 0.25s ease-out;
+
+    font-family: $text-button;
+    font-size: .8rem;
+
+    &:hover {
+        background-color: $col4;
+        color: $col5;
+        border-color: $col6;
+    }
+
+    &:focus {
+        outline:none
+    }
+}

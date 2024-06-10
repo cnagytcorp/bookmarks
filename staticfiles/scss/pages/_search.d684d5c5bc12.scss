@@ -1,0 +1,22 @@
+// --------------------------------------------------------------------- search
+
+.page-link {
+    border-color: $light-grey;
+    color: $onyx;
+
+    &:hover {
+        background-color: $onyx;
+        color: $white;
+        border-color: $onyx;
+    }
+
+    &:focus {
+    box-shadow: none;
+    }
+}
+
+.page-item.active .page-link {
+    background-color: $onyx;
+    color: $white;
+    border-color: $onyx;
+}

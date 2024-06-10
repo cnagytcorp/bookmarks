@@ -1,0 +1,128 @@
+// ---------------------------------------- scss applicable to all / most pages
+
+// ----------------------------------------------------------------- re-usables
+
+.default-bg-color {
+    background-color: $white-dimmed;
+}
+
+.border {
+    @include black-border;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.vertical-bar-left {
+    border-left: 14px solid $onyx;
+    padding-left: 1.4rem;
+}
+
+.vertical-bar-right {
+    border-right: 14px solid $white;
+    padding-right: 1.4rem;
+}
+
+.or-log-in a {
+    @include faded-link;
+}
+
+// tiled background for all pages outside of main app
+.icon-tile-bg-wrapper {
+    @include icon-tile-bg;
+}
+
+// force bg overlay all the way
+// to the bottom of the page.
+.px-space {
+    height: 1px;
+}
+
+#create-account-section {
+    @include background-overlay(0.96);
+}
+
+// settings pages square header icon
+h4 > .fa-stop {
+    color: $logo-blue;
+}
+
+// section box with blue square title as header
+.section-square-wrapper {
+    position: relative;
+
+    .section-square {
+        position: absolute;
+        top: -44px;
+        width: 90px;
+        height: 90px;
+        padding-top: 0.7rem;
+        font-size: 0.8rem;
+        border: 2px solid $onyx;
+        text-align: center;
+        background-color: $logo-blue;
+        color: $white;
+    }
+
+    .square-left {
+        left: 8%;
+    }
+}
+
+.display-toggle {
+    display: none;
+}
+
+
+// --------------------------------------------------------------------- advert
+
+#advert-block {
+    margin: 3rem 0 1rem;
+
+    @media only screen and (min-width: 576px) {
+        margin: 5rem 0 3rem;
+    }
+
+}
+
+.no-ad-spacer {
+    height: 3rem;
+}
+
+// ---------------------------------------------------------- main content area
+// ------------------------------------- applies to main app and settings pages
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.7s cubic-bezier(0.21, 0.885, 0.38, 0.96);
+
+    @media (min-width: 768px) {
+        width: calc(100% - 300px);
+    }
+}
+
+.bg-fade {
+    min-height: 100vh;
+    @include background-overlay(0.98);
+}
+
+.flex-wrapper {
+    display: flex;
+    width: 100%;
+
+    // ------------- no-scroll prevents #content from scrolling when sidebar is
+    // --------------------- active on small screens - ref: .js sidebar toggler
+    .no-scroll {
+        overflow: hidden;
+        height: 100%;
+    }
+}

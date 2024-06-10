@@ -25,13 +25,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "dffew7t8+9erfg6sd4g+564e6r74987ter4g65df"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.environ.get('DEBUG') else False
+DEBUG = True
+TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('HOST_NAME')]
+ALLOWED_HOSTS = ["*",]
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Application definition
 
@@ -43,8 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
-    # 3rd party apps
     'crispy_forms',
+    'crispy_bootstrap4',
+    'bootstrap4',
+    # 3rd party apps
     # my apps
     'accounts',
     'links',
@@ -82,6 +86,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
             ],
+            'debug': DEBUG,
         },
     },
 ]
@@ -144,10 +149,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-if 'DEBUG' not in os.environ:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = (
-        'whitenoise.storage.CompressedManifestStaticFilesStorage')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
@@ -185,12 +189,12 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'start_app'
 
 # SMTP config
-EMAIL_HOST = os.environ.get("EMAIL_HOST")
-EMAIL_PORT = int(os.environ.get("EMAIL_PORT"))
-EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Bookmarks Team <noreply>'
+# EMAIL_HOST = os.environ.get("EMAIL_HOST")
+# EMAIL_PORT = int(os.environ.get("EMAIL_PORT"))
+# EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
+# EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'Bookmarks Team <noreply>'
 
 # Stripe keys
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')

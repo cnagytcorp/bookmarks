@@ -1,0 +1,201 @@
+// ----------------------------------------------------------- buttons & labels
+
+.label {
+    padding: 0.2rem 0.4rem;
+    margin: 0 0.2rem;
+    border: 1px solid $black;
+    color: $black;
+    white-space: nowrap;
+
+    &-small {
+        font-size: 0.8rem;
+    }
+}
+
+.label--white {
+    padding: 0.2rem 0.4rem;
+    margin: 0 0.2rem;
+    border: 1px solid $white;
+    color: $white;
+    white-space: nowrap;
+
+    &-small {
+        font-size: 0.8rem;
+    }
+
+    &:hover {
+        color: $white;
+    }
+}
+
+.btn--standard {
+    @include default-button($dark-grey, $white, $black, transparent, $black);
+}
+
+.btn--white {
+    @include default-button(
+        $white,
+        $dark-grey,
+        $black,
+        $white-dimmed,
+        $black,
+        $black
+    );
+}
+
+.btn--delete {
+    @include default-button(
+        $error-red,
+        $white,
+        $error-red,
+        transparent,
+        $error-red,
+        $error-red
+    );
+}
+
+.btn--faded {
+    @include default-button(
+        transparent,
+        $light-grey,
+        $light-grey,
+        transparent,
+        $dark-grey,
+        $dark-grey
+    );
+}
+
+.btn--invert {
+    @include default-button(transparent, $black, $black, $dark-grey, $white);
+}
+
+.btn--square {
+    @include square-button($dark-grey, $white, $onyx, $white);
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.btn--square-invert {
+    @include square-button($white, $black, $white, $black);
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.btn--page-options {
+    display: inline-block;
+    border: 1px solid $white;
+    border-radius: 0.25rem;
+    background-color: $white;
+    transition: 0.2s ease-out;
+
+    &:hover i {
+        transform: scale(1.1);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn--autofill {
+    background-color: $pink;
+    border: none;
+    border-radius: 4px;
+    color: $white;
+    font-weight: 600;
+    width: 150px;
+    padding: 0.5rem 0.8rem;
+    transition: 0.2s ease-out;
+
+    font-family: $text-button;
+
+    i {
+        margin-right: 0.5rem;
+    }
+
+    &:hover {
+        background-color: $pink-dimmed;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn--default-icon {
+    background-color: $purple;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    color: $white;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+    transition: 0.2s ease-out;
+
+    font-family: $text-button;
+
+    &:hover {
+        background-color: $purple-dimmed;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn--collection-header {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    background-color: transparent;
+    transition: 0.2s ease-out;
+
+    i {
+        width: 1rem;
+    }
+
+    &:hover i {
+        transform: scale(1.1);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn--add-collection {
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn--round {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $onyx;
+    border: 4px solid $onyx;
+    border-radius: 50%;
+    color: $white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: 100px;
+    height: 100px;
+    transition: all 0.3s ease-in-out;
+
+    font-family: $text-button;
+
+    &:hover {
+        border: 4px solid $light-grey;
+        background-color: $medium-grey;
+        color: $white;
+    }
+}

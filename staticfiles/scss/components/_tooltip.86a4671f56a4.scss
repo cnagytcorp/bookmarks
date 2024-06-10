@@ -1,0 +1,38 @@
+// ---------------------------------------------------- square tooltip info box
+
+.tippy-i {
+    .fa-square {
+        margin-top: 0.35rem;
+        font-size: 1.2rem;
+        color: $onyx;
+
+        // increase padding slightly on small screens to make it
+        // easier to select tooltip by touch.
+        padding: 0.75rem 1.75rem 0.75rem 0.75rem;
+        top: -12px;
+        left: -4px;
+
+        @media only screen and (min-width: 576px) {
+            // reset padding on screens above xs
+            padding: 0;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .fa-info {
+        font-size: 0.7rem;
+    }
+}
+
+
+// ---------------------------------------------------------------------- theme
+
+.tippy-tooltip.dark-theme {
+    background-color: $tooltip-grey;
+    color: $white;
+}
+
+.tippy-tooltip.dark-theme[data-placement^="top"] .tippy-arrow {
+    border-top-color: $tooltip-grey;
+}

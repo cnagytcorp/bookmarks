@@ -1,0 +1,48 @@
+// -------------------------------------- page setup and override some defaults
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgba(250, 250, 250, 0.9);
+    font-family: $text-general;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $text-heading;
+}
+
+a {
+    color: $black;
+
+    &:hover {
+        text-decoration: none;
+        color: $black;
+    }
+}
+
+input {
+    border-radius: 0.25rem;
+    // match existing bootstrap color
+    border: 1px solid #ced4da;
+}
+
+div#preload {
+    display:none
+}
+
+.dropdown-menu {
+    padding: 0;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: $white;
+    text-decoration: none;
+    background-color: $onyx;
+}
+

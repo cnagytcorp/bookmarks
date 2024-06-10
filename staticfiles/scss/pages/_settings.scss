@@ -1,0 +1,163 @@
+// --------------- Settings section styling - about, profile, support & premium
+
+.bg-white-lg-screens {
+    background-color: transparent;
+
+    @media only screen and (min-width: 992px) {
+        background-color: $white;
+    }
+}
+
+.form-border {
+    @media only screen and (min-width: 992px) {
+        border: 1px solid $light-grey;
+    }
+}
+
+// ----------------------------------------------------------- settings - about
+
+#about-app {
+    h3,
+    h4 {
+        font-family: $text-general;
+    }
+
+    i {
+        transition: 0.2s ease-out;
+
+        &:hover {
+            color: $logo-blue;
+        }
+    }
+}
+
+
+// --------------------------------------------------------- settings - profile
+
+.user-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5em;
+
+    @media only screen and (min-width: 576px) {
+        font-size: 2.5rem;
+    }
+}
+
+.stats-wrapper {
+    margin: 5rem auto 5rem;
+    padding: 3rem 1rem 1rem;
+    border: 2px solid $onyx;
+    border-radius: 3px;
+
+    @media only screen and (min-width: 768px) {
+        padding-top: 2rem;
+    }
+}
+
+.number-box {
+    border: 1px solid $logo-blue;
+    background-color: $logo-blue;
+    color: $white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.1rem 0.5rem 0.1rem;
+    margin: 0.25rem;
+    border-radius: 4px;
+}
+
+// -------------------------------------------------------------------- support
+
+.premium-tel-box {
+    padding: 4rem 1rem 2rem;
+    border: 2px solid $onyx;
+    border-radius: 3px;
+}
+
+// fix to stop safari mobile changing style of tel numbers
+a[href^=tel] {
+    text-decoration:inherit;
+    color: inherit;
+    }
+    
+// -------------------------------------------------------------------- premium
+
+#premium .set-height {
+    min-height: calc(80vh - #{$topnav-spacer-height});
+}
+
+.premium-features-box {
+    @include background-overlay(0.5);
+    padding: 3rem 0 1rem;
+    border: 2px solid $onyx;
+    border-radius: 3px;
+
+    @media only screen and (min-width: 576px) {
+        padding: 4rem 1rem 1.5rem;
+    }
+
+    li {
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.8rem;
+
+        @media only screen and (min-width: 576px) {
+            font-size: 1.2rem;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        i {
+            display: inline-block;
+            margin: auto;
+            border-radius: 5px;
+            padding: 0.8rem;
+            font-size: 2rem;
+            color: $logo-blue;
+
+            @media only screen and (min-width: 576px) {
+                font-size: 3rem;
+                padding: 1rem;
+            }
+        }
+
+        strong {
+            display: block;
+        }
+    }
+}
+
+.price-block {
+    background-color: $onyx;
+    color: $white;
+    border-radius: 3px;
+    margin: 5rem auto;
+    padding: 2rem;
+
+    .price {
+        background-color: $white;
+        color: $onyx;
+        font-size: 1.8rem;
+        padding: 0.4rem 0.6rem;
+        border-radius: 4px;
+    }
+}
+
+.payment-tooltip {
+    position: relative;
+    top: -2px;
+    left: -4px;
+}
+
+#credit-card-errors {
+    display: none;
+    background-color: $error-red;
+    color: $white;
+    margin: 0.75rem 0;
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}

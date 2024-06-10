@@ -2,9 +2,7 @@ from django.conf import settings
 from django.core.files.storage import default_storage
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-
 from .validators import validate_icon_file_extension, validate_icon_file_size
-
 from PIL import Image
 
 User = settings.AUTH_USER_MODEL

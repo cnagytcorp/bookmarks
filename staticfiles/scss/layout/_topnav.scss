@@ -1,0 +1,58 @@
+// --------------------------------- top navbar for main app and settings pages
+
+#topnav {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
+
+    .form-control:focus {
+        box-shadow: none;
+        // match existing bootstrap color
+        border-color: #ced4da;
+    }
+
+    @media (min-width: 768px) {
+        width: calc(100% - 300px);
+    }
+}
+
+.topnav-spacer {
+    height: $topnav-spacer-height;
+}
+
+#topnav-icons i {
+    font-size: 1.5rem;
+    color: $onyx;
+    opacity: .7;
+
+    transition: opacity .2s ease-out;
+
+    @media (min-width: 576px) {
+        font-size: 2rem;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// style seach box dropdown
+.dropright {
+    .dropdown-menu {
+        transition: all 0.25s;
+        overflow: hidden;
+        transform-origin: left;
+        transform: scale(0, 1);
+        display: block;
+        width: 200px;
+    }
+
+    &:hover {
+        .dropdown-menu {
+            transform: scale(1);
+        }
+    }
+}

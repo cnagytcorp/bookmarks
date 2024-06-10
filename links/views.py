@@ -21,14 +21,11 @@ from .models import Bookmark, Collection, Page
 @login_required
 def links(request, page):
     """ The main app view """
-
     # check page exists, redirect if not
     try:
         page = Page.objects.get(user=request.user, name=page)
     except ObjectDoesNotExist:
-        messages.error(
-            request, f"Could not find a page with the name '{page}'."
-        )
+        messages.error(request, f"Could not find a page with the name '{page}'.")
         return redirect('start_app')
 
     # get all collections & bookmarks for current page
